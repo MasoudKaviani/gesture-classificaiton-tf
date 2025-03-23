@@ -33,10 +33,10 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 lr_schedule = LearningRateScheduler(lambda epoch: 1e-3 * 0.9 ** epoch)
 
-history = model.fit(X_train, y_train, epochs=200, batch_size=32, validation_data=(X_test, y_test),
+history = model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test),
                     callbacks=[early_stopping, lr_schedule])
 
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
 print(f"Test Loss: {test_loss}, Test Accuracy: {test_accuracy}")
 
-model.save('/models/tfmodel.keras')
+model.save('models/tfmodel.keras')
