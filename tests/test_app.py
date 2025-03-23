@@ -1,14 +1,12 @@
 import os
 import pytest
 import pandas as pd
-import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 def test_modules_installed():
     try:
         import pandas
-        import tensorflow
         import sklearn
     except ImportError as e:
         pytest.fail(f"Required module not installed: {e}")
