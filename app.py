@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.callbacks import EarlyStopping, LearningRateScheduler
 
 
-df = pd.read_csv('/data/cleaned_dataset.csv')
+df = pd.read_csv('data/cleaned_dataset.csv')
 X = df[['Ax', 'Ay', 'Az', 'Gx', 'Gy', 'Gz']]
 y = df['Gesture']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15)
